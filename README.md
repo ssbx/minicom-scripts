@@ -46,6 +46,12 @@ Dans un autre terminal préparer l'affichage de la progression du script:
 $ tail -f ~/Minicom/Scripts/output.log
 ```
 
-Mettre le switch sous tention.
+Mettre le switch sous tention. Ça prend environ 5 minutes, une bannière
+s'affiche dans le log quand c'est terminé, et redonne la main à la fenêtre
+minicom.
 
+A la fin du script, pour enchainer les switchs, faire dans l'ordre:
 
+- dans le terminal minicom Ctrl-A G, Entrée (le nom du script est préremplis)
+- brancher le cable console sur le switch
+- alimenter le switch
