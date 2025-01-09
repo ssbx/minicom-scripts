@@ -1,0 +1,11 @@
+# Fichier généré automatiquement — utilisez le menu de configuration de
+# minicom pour changer les paramètres.
+pu port             /dev/ttyUSB0
+pu baudrate         9600
+pu kermit           kermit
+pu scriptprog       expect
+pu updir            Minicom/Up
+pu downdir          Minicom/Down
+pu scriptdir        Minicom/Scripts
+pu rtscts           No 
+pu logfname         Minicom/minicom.log
