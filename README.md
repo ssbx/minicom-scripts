@@ -6,21 +6,36 @@
 $ sudo apt install expect minicom
 ```
 
+L'utilisateur doit apartenir au groupe "dialout" sur debian. Voir le groupe
+du tty (ls -l /dev/ttyUSB0).
+
 ## répertoires
 
 Les répertoires peuvent être changés en modifiant chaque "minirc.*".
 
+### Install auto
+
+La cible "install" va sauvegarder les fichier qui seraient écrasés. Utilise
+l'arboressence de dossier prédéfinie.
+
 ```shell
-$ mkdir ~/Minicom
-$ mkdir ~/Minicom/Down
-$ mkdir ~/Minicom/Up
-$ mkdir ~/Minicom/Logs
-$ mkdir ~/Minicom/Scripts
-$ cp *.tcl ~/Minicom/Scripts/
-$ cp .minirc* ~/
+$ make install
 ```
-L'utilisateur doit apartenir au groupe "dialout" sur debian. Voir le groupe
-du tty (ls -l /dev/ttyUSB0).
+
+### Installation mauelle
+
+Pour modifier le dossier d'install, il faut éditer chaque fichier 
+minirc/.minirc\*. Puis créer ses dossiers:
+
+```shell
+$ mkdir ~/CustomDossier
+$ mkdir ~/CustomDossier/Down
+$ mkdir ~/CustomDossier/Up
+$ mkdir ~/CustomDossier/Logs
+$ mkdir ~/CustomDossier/Scripts
+$ cp Scripts*.tcl ~/CustomDossier/Scripts/
+$ cd minirc; for i in minirc*; do cp $i ~/.$i; done
+```
 
 ## scripts
 
